@@ -20,6 +20,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./src/Common.sln
     - name: Build
-      run: dotnet build .src/Common.sln --configuration Release --no-restore
+      run: dotnet build ./src/Common.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test .src/Common.sln --configuration Release --no-build --verbosity normal
+      run: dotnet test ./src/Common.sln --configuration Release --no-build --verbosity normal
