@@ -18,7 +18,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./src/Common.sln
     - name: Build
-      run: dotnet build ./src/Common.sln --configuration Release --no-restore
+      run: dotnet build ./src/Common.sln --configuration Release --no-restore -c Release -o ./Release
     - name: Get Version Number
       id: getversion
       uses: mavrosxristoforos/get-xml-info@1.0
