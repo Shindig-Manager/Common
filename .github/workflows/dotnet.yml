@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.100-rc.2.21505.57
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./src/Common.sln --configure
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build .src/Common.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test .src/Common.sln --configuration Release --no-build --verbosity normal
