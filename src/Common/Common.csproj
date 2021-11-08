@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ShindigManager.Common</AssemblyName>
+    <RootNamespace>ShindigManager.Common</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.0.0-dev</Version>
+    <Authors>TaleLearnCode</Authors>
+    <Product>Shindig Manager</Product>
+    <Description>Common functionality shared across the Shindig Manager projects.</Description>
+    <Copyright>Copyright © 2021 Green Events &amp; Technology, LLC.  All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/Shindig-Manager/Common</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Shindig-Manager/Common</PackageProjectUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.AzureAppConfiguration" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
