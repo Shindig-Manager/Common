@@ -23,7 +23,7 @@ jobs:
       id: getversion
       uses: mavrosxristoforos/get-xml-info@1.0
       with:
-        xml-file: ./src/Common.csproj
+        xml-file: ./src/Common/Common.csproj
         xpath: /Project/PropertyGroup/Version
     - name: Publish Package
       shell: pwsh 
