@@ -1,4 +1,4 @@
-name: .NET
+name: Publish
 
 on:
   push:
@@ -26,6 +26,7 @@ jobs:
         xml-file: ./src/Common/Common.csproj
         xpath: /Project/PropertyGroup/Version
     - name: Publish Package
-      shell: pwsh 
-      run: |
-        dotnet nuget push ./Release/ShindigManager.Common.${{ steps.getversion.outputs.info }}.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/Shindig-Manager/index.json
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: .src/Common/Common.csproj
+          NUGET_KEY: ${{secrets.GITHUB_TOKEN}}
