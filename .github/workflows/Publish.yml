@@ -25,7 +25,9 @@ jobs:
       with:
         xml-file: ./src/Common/Common.csproj
         xpath: /Project/PropertyGroup/Version
+    - name: Pack
+      run: dotnet pack -v normal -c Release --no-restoure --include-symbols --include-source -p:PackageVersion=${{ steps.getversion.outputs.info }} ./src/Common/Common.csproj
     - name: Publish Package
       shell: pwsh 
       run: |
-        dotnet nuget push ./Debug/ShindigManager.Common.${{ steps.getversion.outputs.info }}.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/Shindig-Manager/index.json
+        dotnet nuget push ./Release/ShindigManager.Common.${{ steps.getversion.outputs.info }}.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/Shindig-Manager/index.json
