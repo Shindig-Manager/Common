@@ -7,7 +7,7 @@
     <AssemblyName>ShindigManager.Common</AssemblyName>
     <RootNamespace>ShindigManager.Common</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.0.0-dev</Version>
+    <Version>0.0.0.1-dev</Version>
     <Authors>TaleLearnCode</Authors>
     <Product>Shindig Manager</Product>
     <Description>Common functionality shared across the Shindig Manager projects.</Description>
