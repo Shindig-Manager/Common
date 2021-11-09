@@ -24,9 +24,7 @@ jobs:
     - name: Test
       run: dotnet test ./src/Common.sln --configuration Release --no-build --verbosity normal
     - name: Publish NuGet
-      # You may pin to the exact commit or the version.
-      # uses: brandedoutcast/publish-nuget@c12b8546b67672ee38ac87bea491ac94a587f7cc
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: Squazz/publish-nuget@v2.5.6
       with:
         PROJECT_FILE_PATH: ./src/Common/Common.csproj
         NUGET_KEY: ${{ secrets.GITHUB_TOKEN }}
