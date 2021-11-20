@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore ./src/Common.sln
+    - name: Build
+      run: dotnet build ./src/Common.sln --no-restore -c Release -o ./Release
+    - name: Get Version Number
+      id: getversion
+      uses: mavrosxristoforos/get-xml-info@1.0
+      with:
+        xml-file: ./src/Common/Common.csproj
+        xpath: /Project/PropertyGroup/Version
+    - name: Publish Package
+      shell: pwsh 
+      run: |
+        ls ./Release/
+        dotnet nuget push ./Release/ShindigManager.Common.${{ steps.getversion.outputs.info }}.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/Shindig-Manager/index.json
