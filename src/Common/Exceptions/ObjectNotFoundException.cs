@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace ShindigManager.Common.Exceptions;
+﻿namespace ShindigManager.Exceptions;
 
 [Serializable]
 public class ObjectNotFoundException : Exception
