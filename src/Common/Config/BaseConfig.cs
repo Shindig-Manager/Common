@@ -19,7 +19,7 @@ public class BaseConfig : IBaseConfig
 		{
 			options.Connect(Environment.GetEnvironmentVariable("ShindigManager_AppConfig_ConnectionString"))
 				.Select(KeyFilter.Any, LabelFilter.Null)
-				.Select(KeyFilter.Any, Environment.GetEnvironmentVariable("ShindigManager_AppCoonfig_Environment"))
+				.Select(KeyFilter.Any, Environment.GetEnvironmentVariable("ShindigManager_AppConfig_Environment"))
 				.ConfigureRefresh(refresh => { refresh.Register("AppSetting:RefreshDate", true); });
 		});
 		_configuration = builder.Build();
